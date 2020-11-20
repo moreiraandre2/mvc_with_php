@@ -18,6 +18,8 @@ $router->namespace("Source\App");
 $router->group(null);
 $router->get("/", "Web:home");
 $router->post("/busca", "Web:listProperties");
+$router->get("/show/{id}", "Web:showProperty");
+
 
 /*
  *Errors

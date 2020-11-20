@@ -1,6 +1,7 @@
 <?php
 
-define("URL_BASE", "http://localhost/imobiliaria");
+define("URL_BASE", "http://localhost/mvc");
+define("TITLE", "#MVCExamplo");
 
 define("DATA_LAYER_CONFIG", [
     "driver" => "mysql",
