@@ -16,7 +16,15 @@ class Web {
 
     public function home($data) 
     {
-        echo $this->view->render("home");
+        $ufs = array();
+        $response = file_get_contents("https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome");
+        $array = json_decode($response, true);
+
+        foreach($array as $uf){
+            array_push($ufs, $uf['sigla']);
+        }
+        
+        echo $this->view->render("home", ["ufs" => $ufs]);
     }
 
     public function listProperties($data)

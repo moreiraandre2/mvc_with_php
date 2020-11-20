@@ -12,8 +12,18 @@
                 <option value="Aluguel">Aluguel</option>
                 <option value="Venda">Venda</option>
             </select>
-            <input type="text" name="cidade" id="cidade">
-            <input type="text" name="uf" id="uf">
+            <select name="uf" id="uf">
+                <option value="">Estado -</option>
+            <?php 
+                foreach($ufs as $uf): 
+            ?>
+                <option value="<?= $uf; ?>"><?= $uf; ?></option>
+            <?php
+                endforeach; 
+                ?>
+            ?>
+            </select>
+            <input type="text" name="cidade" id="cidade">           
             <button type="submit">Buscar</button>
         </form>
     </div>    
